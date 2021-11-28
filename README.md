@@ -248,6 +248,11 @@ DOM 更新操作: newFiber vs oldFiber -> Fiber[] -> DOM
   alternate    Fiber 备份 fiber 比对时使用
 }
 ```
+![3](https://user-images.githubusercontent.com/39437437/143778604-ab6cec82-1e17-4000-8626-7266001aad19.png)
 
-<img src="./images/3.png"/>
+![1](https://user-images.githubusercontent.com/39437437/143778599-fba141ea-616d-4d91-a60c-8ea6a7d12a14.gif)
+
+![2](https://user-images.githubusercontent.com/39437437/143778602-948937f8-05f9-49c1-80b4-255c926a5080.gif)
+
+
 
