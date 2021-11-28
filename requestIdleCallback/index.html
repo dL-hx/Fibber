@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .playground {
+            background: palevioletred;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="playground" id="play">playground</div>
+    <button id="work">执行计算任务</button>
+    <button id="interaction">更改背景颜色</button>
+
+    <script>
+        var play = document.getElementById("play")
+        var workBtn = document.getElementById("work")
+
+        var interactionBtn = document.getElementById("interaction")
+
+
+        var number = 99999
+        var value = 0
+
+
+        var calc = function (deadline) {
+            while (number > 0&&deadline.timeRemaining() > 0) {
+                value = Math.random()<0.5?Math.random():Math.random()
+                console.log(value);
+                
+                number--
+            }
+
+            requestIdleCallback(calc)
+        }
+
+
+        // 利用浏览器空余事件执行任务,  优先执行优先级高的任务
+        workBtn.addEventListener('click', function () {
+            // calc()
+            requestIdleCallback(calc)
+        })
+
+
+        interactionBtn.addEventListener('click', function () {
+            play.style.backgroundColor = 'red'
+        })
+
+
+    </script>
+</body>
+
+</html>
